@@ -35,8 +35,10 @@ class PetsController < ApplicationController
 
   post '/pets/:id' do
     @pet = Pet.find(params[:id])
-    if params[:owner][:name]
-      @pet.owner = Owner.create(name: params[:owner][:name])
+    if params[:pet][:owner_id]
+      @pet.owner = Owner.find(params[:pet][:owner_id])
+    elsif params[:owner][:name]
+      @pet.owner = Owner.create(params[:owner])
     end
     @pet.save
     redirect to "pets/#{@pet.id}"
