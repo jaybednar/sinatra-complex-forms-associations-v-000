@@ -20,7 +20,7 @@ class PetsController < ApplicationController
       @pet.owner = @owner
     end
     @pet.save
-    
+
     redirect to "pets/#{@pet.id}"
   end
 
