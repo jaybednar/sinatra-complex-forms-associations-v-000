@@ -13,7 +13,7 @@ class OwnersController < ApplicationController
   post '/owners' do
     raise params.inspect
     @owner = Owner.create(params[:owner])
-    @new_pet = Pet.create(params[:pet][:name])
+    @new_pet = Pet.create(params[:owner][:pet][:name])
     redirect "owners/#{@owner.id}"
   end
 
