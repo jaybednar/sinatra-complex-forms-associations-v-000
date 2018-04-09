@@ -14,7 +14,7 @@ class OwnersController < ApplicationController
     # raise params.inspect
     binding.pry
     @owner = Owner.create(params[:owner])
-    @new_pet = Pet.create(params[:owner][:pet][:name])
+    @new_pet = Pet.create(params[:pet][:name])
     redirect "owners/#{@owner.id}"
   end
 
