@@ -11,7 +11,7 @@ class OwnersController < ApplicationController
   end
 
   post '/owners' do
-    raise params.inspect
+    binding.pry
   end
 
   get '/owners/:id/edit' do
