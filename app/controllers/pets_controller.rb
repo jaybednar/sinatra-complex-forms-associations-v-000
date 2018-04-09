@@ -37,7 +37,7 @@ class PetsController < ApplicationController
   post '/pets/:id' do
     # binding.pry
     @pet = Pet.find(params[:id])
-    @pet.name = params[:pet][:name]
+    @pet.update(params[:pet])
     if !!params[:pet][:owner_id]
       @pet.owner = Owner.find(params[:pet][:owner_id])
     elsif !!params[:owner][:name]
