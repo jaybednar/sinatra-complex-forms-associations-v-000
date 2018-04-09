@@ -8,7 +8,7 @@
   <input type="text" name="owner[name]" id="owner_name">
 
   <br></br>
-  Select Existing Pets:
+  <label>Select Existing Pets:</label>
   <% @pets.each do |pet| %>
   <input type="checkbox" name="owner[pet_ids][]" value="<%=pet.id%>" id="<%=pet.id%>"><%=pet.name%></input><br>
   <% end %>
