@@ -17,7 +17,6 @@ class PetsController < ApplicationController
       @pet.owner = Owner.find(params[:pet][:owner_id])
     elsif params[:owner][:name]
       @pet.owner = Owner.create(params[:owner])
-      # @ @owner
     end
     @pet.save
 
