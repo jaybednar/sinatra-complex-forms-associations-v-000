@@ -9,7 +9,6 @@
 
   <br></br>
   Select Existing Pets:
-  <br>
   <% @pets.each do |pet| %>
   <input type="checkbox" name="owner[pet_ids][]" value="<%=pet.id%>" id="<%=pet.id%>"><%=pet.name%></input><br>
   <% end %>
