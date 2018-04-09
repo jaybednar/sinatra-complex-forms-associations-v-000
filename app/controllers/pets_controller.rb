@@ -36,6 +36,7 @@ class PetsController < ApplicationController
 
   post '/pets/:id' do
     @pet = Pet.find(params[:id])
+    @pet.name = params[:pet][:name]
     if params[:pet][:owner_id]
       @pet.owner = Owner.find(params[:pet][:owner_id])
     elsif params[:owner][:name]
