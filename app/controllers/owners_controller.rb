@@ -11,7 +11,8 @@ class OwnersController < ApplicationController
   end
 
   post '/owners' do
-    raise params.inspect
+    # raise params.inspect
+    binding.pry
     @owner = Owner.create(params[:owner])
     @new_pet = Pet.create(params[:owner][:pet][:name])
     redirect "owners/#{@owner.id}"
